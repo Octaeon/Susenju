@@ -1,42 +1,38 @@
-var u = Object.defineProperty;
-var i = Object.getOwnPropertyDescriptor;
-var f = Object.getOwnPropertyNames;
-var l = Object.prototype.hasOwnProperty;
-var p = (r, o) => {
-  for (var t in o)
-    u(r, t, { get: o[t], enumerable: !0 });
-}, w = (r, o, t, a) => {
-  if (o && typeof o == "object" || typeof o == "function")
-    for (let n of f(o))
-      !l.call(r, n) && n !== t && u(r, n, { get: () => o[n], enumerable: !(a = i(o, n)) || a.enumerable });
-  return r;
+var o = Object.defineProperty;
+var c = Object.getOwnPropertyDescriptor;
+var i = Object.getOwnPropertyNames;
+var s = Object.prototype.hasOwnProperty;
+var v = (e, r) => {
+  for (var t in r)
+    o(e, t, { get: r[t], enumerable: !0 });
+}, f = (e, r, t, a) => {
+  if (r && typeof r == "object" || typeof r == "function")
+    for (let n of i(r))
+      !s.call(e, n) && n !== t && o(e, n, { get: () => r[n], enumerable: !(a = c(r, n)) || a.enumerable });
+  return e;
 };
-var h = (r) => w(u({}, "__esModule", { value: !0 }), r);
+var p = (e) => f(o({}, "__esModule", { value: !0 }), e);
 
 // output/Main/index.js
-var N = {};
-p(N, {
-  createCreep: () => c,
-  main: () => E
+var x = {};
+v(x, {
+  main: () => w
 });
-module.exports = h(N);
+module.exports = p(x);
 
 // output/Main/foreign.js
-var c = function() {
-  Game.spawns.Spawn1.spawnCreep([WORK, CARRY, MOVE], "Harvester1");
-};
-
-// output/Effect.Console/foreign.js
-var e = function(r) {
+var u = function(e) {
   return function() {
-    console.log(r);
+    Game.creeps.Harvester1.moveTo(e.x, e.y);
   };
 };
 
 // output/Main/index.js
-var E = /* @__PURE__ */ e("\u{1F35D}");
+var w = /* @__PURE__ */ u({
+  x: 10,
+  y: 10
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  createCreep,
   main
 });
