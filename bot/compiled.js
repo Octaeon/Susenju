@@ -233,8 +233,8 @@ var Xn = /* @__PURE__ */ function() {
   };
 }, rt = /* @__PURE__ */ function() {
   var r = [new pr("Harvester1", new Nr({
-    x: 10,
-    y: 10
+    x: 35,
+    y: 20
   }))];
   return Ar(lr)(Zn)(_(H)(void 0))(r);
 }();

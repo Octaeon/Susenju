@@ -11,8 +11,8 @@ import Data.Tuple.Nested ((/\))
 import Data.Foldable (foldl)
 
 foreign import createCreep :: Effect Unit
-foreign import moveTo :: String -> Position -> Effect Unit
-foreign import harvest :: String -> Position -> Effect Unit
+foreign import moveTo :: Creep -> Position -> Effect Unit
+foreign import harvest :: Creep -> Position -> Effect Unit
 
 type Creep = String
 
@@ -25,7 +25,7 @@ data Command
   = Move Position
   | Harvest Position
 
-mapCommands :: Effect Unit -> Tuple String Command -> Effect Unit
+mapCommands :: Effect Unit -> Tuple Creep Command -> Effect Unit
 mapCommands _ (Tuple creep command) =
   case command of
     Move pos -> moveTo creep pos
@@ -35,7 +35,7 @@ main :: Effect Unit
 main =
   let
     creep = "Harvester1"
-    commands = [ creep /\ Harvest { x: 10.0, y: 10.0 } ]
+    commands = [ creep /\ Harvest { x: 35.0, y: 20.0 } ]
   in
     foldl mapCommands (pure unit) commands
 -- get creep 'Harvester1'
