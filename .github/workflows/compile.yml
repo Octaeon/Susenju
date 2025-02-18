@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Set up a PureScript toolchain
         uses: purescript-contrib/setup-purescript@v3.1.0
@@ -23,7 +23,7 @@ jobs:
           spago: 0.21.0
 
       - name: Build using Spago
-      - run: spago build
+        run: spago build
 
       - name: Read environment
         run: ls -la
