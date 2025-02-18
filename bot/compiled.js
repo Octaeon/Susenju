@@ -1,37 +1,34 @@
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
+var u = Object.defineProperty;
+var i = Object.getOwnPropertyDescriptor;
+var s = Object.getOwnPropertyNames;
+var f = Object.prototype.hasOwnProperty;
+var l = (r, o) => {
+  for (var t in o)
+    u(r, t, { get: o[t], enumerable: !0 });
+}, p = (r, o, t, a) => {
+  if (o && typeof o == "object" || typeof o == "function")
+    for (let n of s(o))
+      !f.call(r, n) && n !== t && u(r, n, { get: () => o[n], enumerable: !(a = i(o, n)) || a.enumerable });
+  return r;
 };
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var h = (r) => p(u({}, "__esModule", { value: !0 }), r);
 
 // output/Main/index.js
-var Main_exports = {};
-__export(Main_exports, {
-  main: () => main
+var E = {};
+l(E, {
+  main: () => I
 });
-module.exports = __toCommonJS(Main_exports);
+module.exports = h(E);
 
 // output/Effect.Console/foreign.js
-var log = function(s) {
+var e = function(r) {
   return function() {
-    console.log(s);
+    console.log(r);
   };
 };
 
 // output/Main/index.js
-var main = /* @__PURE__ */ log("\u{1F35D}");
+var I = /* @__PURE__ */ e("\u{1F35D}");
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   main
