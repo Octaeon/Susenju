@@ -30,7 +30,7 @@ var vr = function(r) {
 }, mr = function(r) {
   return function(n) {
     return function() {
-      Game.creeps[r].harvest(n.x, n.y);
+      console.log("Creep " + r + " is harvesting at x:" + n.x + " and y:" + n.y), Game.creeps[r].harvest(n.x, n.y);
     };
   };
 };

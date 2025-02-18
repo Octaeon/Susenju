@@ -14,6 +14,7 @@ export const moveTo = function (name) {
 export const harvest = function(name){
     return function(position) {
         return function() {
+            console.log("Creep " + name + " is harvesting at x:" + position.x + " and y:" + position.y);
             Game.creeps[name].harvest(position.x, position.y);
         };
     };
