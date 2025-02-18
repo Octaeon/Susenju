@@ -1,3 +1,5 @@
 #!/bin/zsh
 
-spago bundle-module --to bot/compiled.js --platform 'node'
+spago build
+
+esbuild compiled=output/Main/index.js --bundle --platform=node --outdir=bot/ --format=cjs
