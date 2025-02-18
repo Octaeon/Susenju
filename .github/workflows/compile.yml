@@ -27,8 +27,3 @@ jobs:
 
       - name: Read environment
         run: ls -la
-
-      #- name: Release
-      #  uses: softprops/action-gh-release@v2
-      #  with:
-      #    files: Release.txt
